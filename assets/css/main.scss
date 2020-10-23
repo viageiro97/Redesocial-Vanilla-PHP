@@ -1,0 +1,23 @@
+@import 'variaveis';
+@import 'header';
+@import 'newpostarea';
+@import 'postagem';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: roboto;
+    background: #e4e6eb;
+}
+
+//Tipografia
+h1{
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+h2{
+    font-size: 1.5rem;
+}

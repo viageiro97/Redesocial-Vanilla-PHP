@@ -1,0 +1,83 @@
+.imagemredonda{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.novo-post{
+    padding-top: 50px;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .conteudo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        max-width: 600px;
+        justify-content: center;
+        padding: 20px 10px;
+    }
+
+    .topo{
+        padding: 10px;
+        display: flex;
+        textarea{
+            border: none;
+            resize: none;
+            max-width: 500px;
+            height: 40px;
+        }
+    }
+
+    .baixo{
+        padding-top: 20px;
+        justify-content: center;
+        .foto{
+            display: flex;
+            margin-right: 20px;
+        }
+
+        input{
+            display: none;
+        }
+        button{
+            display: flex;
+            background: none;
+            border: none;
+            i{
+                color: blue;
+                font-size: 1.1rem;
+                margin-right: 8px;
+                padding-top: 3px;
+            }
+            .camera{
+                color: red;
+            }
+            .imagem{
+                color:rgb(64, 107, 64);
+            }
+            .emotion{
+                color: rgba(130, 219, 13, 0.849);
+
+            }
+        }
+    }
+    .fotocarregada{
+        display: flex;
+        justify-content: center;
+        img{
+            display: none;
+            box-shadow: $sombra1;
+            border-radius: 10px;
+            object-fit: cover;
+            height: 450px;
+            width: 500px;
+        }
+    }
+    .publicarbtn{
+        margin: 10px auto;
+    }
+}
