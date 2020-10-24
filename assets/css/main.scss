@@ -2,6 +2,9 @@
 @import 'header';
 @import 'newpostarea';
 @import 'postagem';
+@import 'aside';
+@import 'modalPost';
+@import 'modals';
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +13,7 @@
 body{
     font-family: roboto;
     background: #e4e6eb;
+    color: $cor-primariaTexto;
 }
 
 //Tipografia

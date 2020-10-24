@@ -25,7 +25,7 @@
         flex-direction: column;
         justify-content: center;
         width: 100%;
-        max-width: 600px;
+        max-width: $post-size;
         justify-content: center;
         padding: 20px 10px;
     }
@@ -55,6 +55,16 @@
             display: none;
         }
         button{
+            padding-left: 8px;
+            padding-right: 8px;
+            border-radius: 7px;
+            &:hover{
+                background:rgba(0, 0, 255, 0.075);;
+            }
+            align-items: center;
+            p{
+                margin: 0;
+            }
             display: flex;
             background: none;
             border: none;
@@ -65,13 +75,13 @@
                 padding-top: 3px;
             }
             .camera{
-                color: red;
+                color:red;
             }
             .imagem{
-                color:rgb(64, 107, 64);
+                color:rgb(83, 151, 83);
             }
             .emotion{
-                color: rgba(130, 219, 13, 0.849);
+                color:blue;
 
             }
         }

@@ -5,6 +5,10 @@ header{
     width: 100%;
     background: white;
     box-shadow: $sombra1;
+    .logo{
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
     a{
         color:blue;
         &:hover{

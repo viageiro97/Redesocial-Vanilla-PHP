@@ -13,7 +13,7 @@
     <header>
         <!--NAVBAR-->
         <div class="container d-flex align-items-center">
-            <a href="index.html">RedeSocial</a>
+            <a class="logo" href="index.html">MOZABOOK</a>
             <ul class="menu nav navbar-light ml-auto pt-2 pb-2">
                 <div class="container d-flex justify-content-end align-items-center">
                     <li class="nav-item">
@@ -29,36 +29,34 @@
             </ul>
         </div>
     </header>
+    <!--modais-->
+    <div class="hide overlayADDPOST"></div>
     <section class="novo-post">
         <div class="container">
             <div class="conteudo">
                     <div class="topo">
                     <img class="imagemredonda mr-3" src="../assets/img/profile.jpg" alt="" srcset="">
-                    <textarea placeholder="O que estas pensando?" class="form-control"></textarea>
+                    <textarea id="inputPOST" placeholder="O que estas pensando?" class="form-control"></textarea>
                     </div>
                     <div class="baixo d-flex">
-                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
                         <div class="foto">
-                            <button>
-                                <i class="camera fas fa-camera"></i>
+                            <button class="newpostbtn btn">
+                                <i class="camera fas fa-video"></i>
+                                <p>Video</p>
                             </button>
-                            <p>Abrir a Camera</p>
                         </div>
                         <div class="foto">
-                            <button>
+                            <button class="newpostbtn btn">
                                 <i class="imagem fas fa-images"></i>
+                                <p>Foto da Galeria</p>
                             </button>
-                            <p>Foto/Video</p>
                         </div>
                         <div class="foto">
-                            <button>
-                                <i class="emotion fas fa-smile-wink"></i>
+                            <button class="newpostbtn btn">
+                                <i class="emotion fas fa-camera"></i>
+                                <p>Abrir Camera</p>
                             </button>
-                            <p>A sentir-me</p>
                         </div>
-                    </div>
-                    <div class="fotocarregada">
-                        <img src="../assets/img/profile.jpg" alt="" srcset="">
                     </div>
             </div>
         </div>
@@ -91,7 +89,7 @@
                             <input class="form-control" type="text" placeholder="Escreva um comentario...">
                         </div>
                         <div class="comentario">
-                            <img class="imagemredonda" src="../assets/img/profile.jpg" alt="" srcset="">
+                            <img class="imagemredonda" src="../assets/img/profile2.jpg" alt="" srcset="">
                             <div class="comentarioconteudo">
                                 <a href="#">Hellen John</a>
                                 <p>Gostei da futo muito boa!</p>
@@ -135,6 +133,89 @@
             </div>
         </div>
     </section>
-    
+    <aside class="esquerdo">
+        <ul class="asidelinks">
+            <li><a href="#"><i class="fas fa-user"></i>Perfil</a></li>
+            <li><a href="#"><i class="fas fa-user-friends"></i>Amigos</a></li>
+            <li><a href="#"><i class="fas fa-users"></i>Amigos</a></li>
+            <li><a href="#"><i class="fas fa-history"></i>Minha Actividade</a></li>
+            <li><a href="#"><i class="fas fa-bookmark"></i>Guardados</a></li>
+        </ul>
+        <footer>
+            <ul>
+                <li><a class="text-muted" href="">Sobre</a></li>
+                <li><a class="text-muted" href="">Ajuda</a></li>
+                <li><a class="text-muted" href="">Privacidade</a></li>
+                <li><a class="text-muted" href="">Contas</a></li>
+                <li><a class="text-muted" href="">Lingua</a></li>
+            </ul>
+            <p class="text-muted">&copy;2020 Mozagram por Victor Viageiro </p>
+        </footer>
+    </aside>
+    <aside class="direito">
+        <h1>Pessoas que talvez conhecas</h1>
+        <div class="sugestoes">
+            <div class="sugerido">
+                <a href=""><img class="imagemredonda" src="../assets/img/profile.jpg" alt="">Hellen John</a>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i></button>
+            </div>
+            <div class="sugerido">
+                <a href=""><img class="imagemredonda" src="../assets/img/profile.jpg" alt="">Hellen John</a>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i></button>
+            </div>
+            <div class="sugerido">
+                <a href=""><img class="imagemredonda" src="../assets/img/profile.jpg" alt="">Hellen John</a>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i></button>
+            </div>
+            <div class="sugerido">
+                <a href=""><img class="imagemredonda" src="../assets/img/profile.jpg" alt="">Hellen John</a>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i></button>
+            </div>
+            <div class="sugerido">
+                <a href=""><img class="imagemredonda" src="../assets/img/profile.jpg" alt="">Hellen John</a>
+                <button class="btn btn-primary btn-sm"><i class="fas fa-user-plus"></i></button>
+            </div>
+            <a class="more" href="#">Ver Mais</a>
+        </div>
+    </aside>
+
+    <!--MODAIS-->
+    <!--Adicionar novo Post-->
+    <div class="hide modalNovoPost">
+        <form action="">
+            <i class="close fas fa-times"></i>
+            <h1 class="titulo">Criar Publicação</h1>
+            <div class="autor">
+                <img class="imagemredonda" src="../assets/img/profile2.jpg" alt="" srcset="">
+                <div class="infoautor">
+                    <h1>Jose Coimbra</h1>
+                    <select class="form-control" name="privacidade" id="">
+                        <option value="0">Publico</option>
+                        <option value="1">Somente Amigos</option>
+                        <option value="2">Privado</option>
+                    </select>
+                </div>
+            </div>
+            <div class="conteudo-texto">
+                <textarea name="textoPOST" id="modalINPUT" placeholder="Em que estas a pensar,Hellen John?" class="form-control"></textarea>
+            </div>
+            <div class="previewimagem">
+                <i class="resetFoto fas fa-times"></i>
+                <img id="fotoModal" src="" alt="" srcset="">
+            </div>
+            <div class="conteudo-media">
+                <p>Adicionar à tua publicação:</p>
+                <button class="btn newpostbtn"><i class="video fas fa-video"></i></button>
+                <button class="btn newpostbtn"><i class="imagem fas fa-image"></i></button>
+                <button class="btn newpostbtn"><i class="camera fas fa-camera"></i></button>
+            </div>
+            <input id="inputFoto" name="foto" type="file">
+            <button type="submit" class="btn btn-primary">Publicar</button>
+        </form>
+    </div>
+
+
+    <!--Javascript-->
+    <script src="/assets/javascript/main.js"></script>
 </body>
 </html>
