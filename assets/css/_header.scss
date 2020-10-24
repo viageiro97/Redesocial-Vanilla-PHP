@@ -1,6 +1,12 @@
 header{
+    position: fixed;
+    top: 0;
+    z-index: 3000;
+    width: 100%;
+    background: white;
+    box-shadow: $sombra1;
     a{
-        color: white;
+        color:blue;
         &:hover{
             color: black;
             text-decoration: none;

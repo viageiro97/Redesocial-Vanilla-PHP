@@ -5,13 +5,22 @@
     border-radius: 50%;
 }
 .novo-post{
-    padding-top: 50px;
+    h1{
+        color: #050505;
+        font-weight: bold;
+        margin-bottom: 25px;
+        font-size: 1.3rem;
+    }
+    padding-top: 100px;
     .container{
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     .conteudo{
+        border-radius: 8px;
+        box-shadow: $sombra1;
+        background: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -25,6 +34,8 @@
         padding: 10px;
         display: flex;
         textarea{
+            background: #e4e6eb;
+            border-radius: 30px;
             border: none;
             resize: none;
             max-width: 500px;
@@ -76,8 +87,5 @@
             height: 450px;
             width: 500px;
         }
-    }
-    .publicarbtn{
-        margin: 10px auto;
     }
 }
