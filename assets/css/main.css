@@ -158,26 +158,6 @@ header img {
   color: blue;
 }
 
-.novo-post .fotocarregada {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.novo-post .fotocarregada img {
-  display: none;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  border-radius: 10px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  height: 450px;
-  width: 500px;
-}
-
 .postagem .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -605,15 +585,30 @@ aside {
 }
 
 .modalNovoPost .previewimagem .resetFoto {
+  background: rgba(0, 0, 0, 0.507);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 1.5rem;
   cursor: pointer;
   position: absolute;
-  color: red;
+  color: white;
   top: 30px;
   right: 30px;
 }
 
 .modalNovoPost .previewimagem img {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   display: none;
   border-radius: 7px;
   height: 300px;
@@ -623,8 +618,7 @@ aside {
 }
 
 .modalNovoPost .conteudo-media {
-  margin-top: 15px;
-  min-height: 70px;
+  margin-top: 10px;
   border: 1px solid rgba(12, 88, 201, 0.274);
   padding: 10px;
   border-radius: 7px;
@@ -640,6 +634,10 @@ aside {
   background: none;
   border: none;
   margin-left: 18px;
+}
+
+.modalNovoPost .conteudo-media button i {
+  font-size: 1.2rem;
 }
 
 .modalNovoPost .conteudo-media button .camera {

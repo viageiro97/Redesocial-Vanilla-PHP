@@ -1,4 +1,3 @@
-//MODAIS
 const inputPost = document.getElementById('inputPOST');
 const modalPOST = document.querySelector('.modalNovoPost');
 const modalInput = document.getElementById('.modalInput');
@@ -53,7 +52,7 @@ function mostrarPreview(e){
         let src = URL.createObjectURL(e.target.files[0]);
         previewImagem.src = src;
         previewImagem.style.display='block';
-        resetFoto.style.display='block';
+        resetFoto.style.display='flex';
         console.log(src);
     }
 }
