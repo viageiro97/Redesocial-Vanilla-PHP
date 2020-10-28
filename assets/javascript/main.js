@@ -1,3 +1,4 @@
+const submitBtn = document.getElementById('submitPOST');
 const inputPost = document.getElementById('inputPOST');
 const modalPOST = document.querySelector('.modalNovoPost');
 const modalInput = document.getElementById('.modalInput');
@@ -6,6 +7,9 @@ const previewImagem = document.getElementById('fotoModal');
 const resetFoto = document.querySelector(".resetFoto");
 const overlayPOST = document.querySelector('.overlayADDPOST');
 const closePOST = document.querySelector('.close');
+/*submitBtn.addEventListener('click',function(e){
+    e.preventDefault();
+})*/
 inputPost.addEventListener('click',function(){
     mostrar(modalPOST,1);
     mostrar(overlayPOST,1);

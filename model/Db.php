@@ -1,13 +1,14 @@
 <?php
     class Db{
-        private $servidor ='localhost';
-        private $username = 'root';
-        private $password = '';
-        private $dbname = 'redesocialmz';
+        private static $username = 'root';
+        private static $password = '';
+        //MUDE OPCOES NESTA VARIAVEL PARA CONFIGURAR A BASE DE DADOS
+        private static $parametros = "mysql:host=localhost;dbname=redesocialmz";
 
-        public function conectar(){
+        //FUNCAO QUE CONECTA A BASE DE DADOS
+        protected static function conectar(){
             try{
-                $conexao = new PDO("mysql:host=$this->servidor;dbname=$this->dbname",$this->username,$this->password);
+                $conexao = new PDO(self::$parametros,self::$username,self::$password);
                 $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $conexao;
             }catch(PDOException $e){

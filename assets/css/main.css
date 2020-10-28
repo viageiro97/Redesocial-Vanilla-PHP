@@ -529,6 +529,10 @@ aside {
   border-bottom: 1px solid rgba(12, 88, 201, 0.274);
 }
 
+.modalNovoPost .erro {
+  font-size: .7rem !important;
+}
+
 .modalNovoPost .autor {
   display: -webkit-box;
   display: -ms-flexbox;

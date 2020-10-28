@@ -1,33 +1,29 @@
 <?php
 require_once 'Db.php';
 class Postagem extends Db{
-    private $idPostagem;
-    private $idUsuario;
-    private $conteudoTexto;
-    private $conteudoFoto;
-    private $privacidade;
-    private $dataPublicacao;
-    public function __construct($id,$autor,$texto,$foto,$privacidade,$data)
+    protected $idPostagem;
+    protected $idUsuario;
+    protected $conteudoTexto;
+    protected $conteudoFoto;
+    protected $privacidade;
+    protected $dataPublicacao;
+    public function __construct($texto,$privacidade)
     {
-        $this->idPostagem = $id;
-        $this->idUsuario = $autor;
         $this->conteudoTexto = $texto;
-        $this->conteudoFoto = $foto;
         $this->privacidade=$privacidade;
-        $this->dataPublicacao = $data;
     }
  
 
 //PUBLICAR POSTAGENS
-    public function publicarPost(){
-        $conexao = $this->conectar();
+    protected function publicarPost(){
+        $conexao = self::conectar();
         $sql = "INSERT INTO postagem(conteudoTexto, conteudoImagem, privacidade,usuario_idusuario) VALUES (:conteudoTexto,:conteudoImagem,:privacidade,:autor)";
-        
+        $autor = 3;
         $stmt = $conexao->prepare($sql);
-        $stmt ->bindParam(':conteudoTexto',$a);
-        $stmt ->bindParam(':conteudoImagem',$b);
-        $stmt ->bindParam(':privacidade',$c);
-        $stmt ->bindParam(':autor',$d);
+        $stmt ->bindParam(':conteudoTexto',$this->conteudoTexto);
+        $stmt ->bindParam(':conteudoImagem',$this->conteudoFoto);
+        $stmt ->bindParam(':privacidade',$this->privacidade);
+        $stmt ->bindParam(':autor',$autor);
         if($stmt->execute()){
             echo 'Inserido com Sucesso';
         }else{
@@ -36,8 +32,8 @@ class Postagem extends Db{
     }
 
 //CARREGAR UNICO POST
-    public function caregarUmPost($idPostagem){
-        $conexao = $this->conectar();
+    protected function caregarUmPost($idPostagem){
+        $conexao = self::conectar();
         $sql = "SELECT * FROM postagem WHERE idpostagem = :id";
         $stmt = $conexao->prepare($sql);
         $stmt ->bindParam(':id', $idPostagem);
@@ -46,8 +42,16 @@ class Postagem extends Db{
         $postagem = $stmt ->fetch();
         return $postagem;
     }
-
 //CAREGAR TODAS POSTAGENS
+protected static function caregarTodosPost(){
+    $conexao = self::conectar();
+    $sql = "SELECT p.*, u.nomeProprio, u.apelido, u.nomeUsuario from postagem as p inner join usuario as u on p.usuario_idusuario = u.idusuario";
+    $stmt = $conexao->prepare($sql);
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_ASSOC);
+    $postagem = $stmt ->fetchAll();
+    return $postagem;
+}
 
 
 //ACTUALIZAR POSTAGEM
