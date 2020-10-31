@@ -61,9 +61,9 @@ class Upload{
     function fazerUpload(){
         $ficheirofinal = $this->diretoriofinal.basename($this->nomeFicheiro);
         if(move_uploaded_file($this->ficheiroTemporario,$ficheirofinal)){
-            echo "foi carregado com sucesso!";
+            //echo "foi carregado com sucesso!";
         }else{
-            echo "desculpe nao foi possivel carregar o ficheiro";
+            //echo "desculpe nao foi possivel carregar o ficheiro";
         }
     }
 

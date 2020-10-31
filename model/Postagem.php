@@ -25,9 +25,9 @@ class Postagem extends Db{
         $stmt ->bindParam(':privacidade',$this->privacidade);
         $stmt ->bindParam(':autor',$autor);
         if($stmt->execute()){
-            echo 'Inserido com Sucesso';
+            //echo 'Inserido com Sucesso';
         }else{
-            echo "A insersao falhou";
+            //echo "A insersao falhou";
         };
     }
 
@@ -45,7 +45,7 @@ class Postagem extends Db{
 //CAREGAR TODAS POSTAGENS
 protected static function caregarTodosPost(){
     $conexao = self::conectar();
-    $sql = "SELECT p.*, u.nomeProprio, u.apelido, u.nomeUsuario from postagem as p inner join usuario as u on p.usuario_idusuario = u.idusuario";
+    $sql = "SELECT p.*, u.nomeProprio, u.apelido, u.nomeUsuario from postagem as p inner join usuario as u on p.usuario_idusuario = u.idusuario ORDER BY idpostagem DESC";
     $stmt = $conexao->prepare($sql);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);

@@ -12,7 +12,7 @@
                 $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $conexao;
             }catch(PDOException $e){
-                echo "A conexao com o banco de dados falhou: ".$e->getMessage();
+                //echo "A conexao com o banco de dados falhou: ".$e->getMessage();
             }
         }
     }

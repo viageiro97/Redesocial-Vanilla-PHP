@@ -195,7 +195,6 @@ header img {
 }
 
 .topo .autoredata p {
-  outline: solid;
   padding: 0;
 }
 
@@ -346,7 +345,7 @@ header img {
 
 .post {
   margin-top: 20px;
-  max-width: 650px;
+  width: 650px;
   background: white;
   padding-top: 15px;
   padding-bottom: 8px;

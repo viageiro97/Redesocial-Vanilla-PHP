@@ -1,9 +1,9 @@
 <!--INCLUDES DE PARTES DA PAGINA-->
 <?php
-    include './view/inc/header.php';
-    include './view/inc/menudireito.php';
-    include './view/inc/menuesquerdo.php';
-    include './view/inc/componentepost.php';
+    include '../view/inc/header.php';
+    include '../view/inc/menudireito.php';
+    include '../view/inc/menuesquerdo.php';
+    include '../view/inc/componentepost.php';
 ?>
 
 <!------------------------------------>
@@ -25,9 +25,11 @@
                         <div class="conteudo">
                             <p><?php echo $post["conteudoTexto"]?></p>
                         </div>
-                        <div class="foto">
-                            <img src="<?php echo $post["conteudoImagem"]?>" alt="" srcset="">
-                        </div>
+                        <?php if($post["conteudoImagem"]):?>
+                            <div class="foto">
+                             <img src="<?php echo $post["conteudoImagem"]?>" alt="" srcset="">
+                            </div>
+                        <?php endif?>
                         <div class="baixopost">
                             <button class="likes"><i class="far fa-heart"></i>368 gostos</button>
                             <button class="coment"><i class="far fa-comment"></i>26 comentarios</button>
@@ -35,7 +37,7 @@
                         </div>
                         <div class="comentarios">
                             <div class="comentar">
-                                <img class="imagemredonda" src="../assets/img/profile.jpg" alt="" srcset="">
+                                <img class="imagemredonda" src="https://source.unsplash.com/random/" alt="" srcset="">
                                 <input class="form-control" type="text" placeholder="Escreva um comentario...">
                             </div>
                             <div class="comentario">
@@ -52,12 +54,10 @@
         </div>
     </section>
 
-    
-
 
     <!--Javascript-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-    <script src="./assets/javascript/request.js"></script>
-    <script src="./assets/javascript/main.js"></script>
+    <script src="../assets/javascript/request.js"></script>
+    <script src="../assets/javascript/index.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 <?php
-    include_once './model/Postagem.php';
+    include_once '../model/Postagem.php';
 
 //METODOS DO CONTROLLER!----------------------------
     class PostagemController extends Postagem{
@@ -18,15 +18,24 @@
 
         //Inserir postagens na Base de dados - Metodo Igual tambem no Model
         public function publicaPostC(){
+            $sucesso = "sucesso";
+            $falha = "erro";
             //Verificar se ambos estao vazio ambos, Antes de Inserir
-            if(empty($this->conteudoTexto) && empty($this->conteudoFoto)){
-                $_SESSION["postvazio"] = "Insira pelo menos um texto ou carregue uma foto para publicar seu post!";
+            if(empty($this->conteudoTexto) && $this->foto["size"]==0){
+                return $falha;
             }else{
-            require_once './utils/Upload.php';
-            $upload = new Upload($this->foto,"./assets/img/feedimages/");
-            $upload ->fazerUpload();
-            $this->conteudoFoto = $upload->caminhoImagem();
-            $this->publicarPost();
-        }
+                if(($this->foto["size"] == 0)){
+                    $this->conteudoFoto = null;
+                    $this->publicarPost();
+                    return $sucesso;
+                }else{
+                    require_once '../utils/Upload.php';
+                    $upload = new Upload($this->foto,"../assets/img/feedimages/");
+                    $upload ->fazerUpload();
+                    $this->conteudoFoto = $upload->caminhoImagem();
+                    $this->publicarPost();
+                    return $sucesso;
+                }
+            }
     }
 }

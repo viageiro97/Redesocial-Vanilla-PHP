@@ -4,7 +4,7 @@
         <div class="container">
                 <div class="conteudo">
                         <div class="topo">
-                        <img class="imagemredonda mr-3" src="../assets/img/profile.jpg" alt="" srcset="">
+                        <img class="imagemredonda mr-3" src="https://source.unsplash.com/random/" alt="" srcset="">
                         <textarea id="inputPOST" placeholder="O que estas pensando?" class="form-control"></textarea>
                         </div>
                         <div class="baixo d-flex">
@@ -34,21 +34,16 @@
         <!--MODAIS-->
     <!--Adicionar novo Post-->
     <div class="hide modalNovoPost">
-        <form action="?action=adicionar" method="POST" enctype="multipart/form-data">
+        <form id="form1" action="" method="POST" enctype="multipart/form-data">
             <i class="close fas fa-times"></i>
             <h1 class="titulo">Criar Publicação</h1>
-                <?php if(isset($_SESSION["postvazio"])):?>
-                    <p class="erro alert alert-danger"><?php echo $_SESSION["postvazio"];?></p>
-                    <script src="./assets/javascript/erroupload.js"></script>
-                    <?php unset($_SESSION["postvazio"]);?>
-                <?php endif?>
-                
+            <p class="hide erro text-center alert alert-danger">Insira ou uma uma imagem, ou um texto!</p>
             </p>
             <div class="autor">
                 <img class="imagemredonda" src="https://source.unsplash.com/random" alt="" srcset="">
                 <div class="infoautor">
                     <h1>Jose Coimbra</h1>
-                    <select class="form-control" name="privacidade" id="">
+                    <select class="form-control" name="privacidade" id="privacidade">
                         <option value="0">Publico</option>
                         <option value="1">Somente Amigos</option>
                         <option value="2">Privado</option>
@@ -56,7 +51,7 @@
                 </div>
             </div>
             <div class="conteudo-texto">
-                <textarea name="conteudoTexto" id="modalINPUT" placeholder="Em que estas a pensar,Hellen John?" class="form-control"></textarea>
+                <textarea name="conteudoTexto" id="texto" placeholder="Em que estas a pensar,Hellen John?" class="form-control"></textarea>
             </div>
             <div class="previewimagem">
                 <i class="resetFoto fas fa-times"></i>
@@ -69,6 +64,7 @@
                 <button class="btn newpostbtn"><i class="camera fas fa-camera"></i></button>
             </div>
             <input id="inputFoto" name="foto" type="file">
-            <button id="submitPost" value="submetido" name="submetido" type="submit" class="btn btn-primary">Publicar</button>
+            <input style="display: none;" type="text" name="action" value="adicionar">
+            <button form="form1" value="submetido" name="submetido" type="submit" class="btn btn-primary">Publicar</button>
         </form>
     </div>

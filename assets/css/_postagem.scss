@@ -11,7 +11,6 @@
         flex-direction: column;
         justify-content: center;
         p{
-            outline: solid;
             padding: 0;
         }
     }
@@ -137,8 +136,8 @@
 }
 .post{
     margin-top: 20px;
-    max-width: $post-size;
-    background: white;
+    width: $post-size;
+    background:white;
     padding-top: 15px;
     padding-bottom: 8px;
     border-radius: 8px;
