@@ -11,7 +11,7 @@
     </section>
     <section class="feed">
         <div class="postagem">
-            <div class="container">
+            <div class="container" id="postlist">
                 <!--IMPRIMIR POSTAGENS DA BD-->
                 <?php foreach($post as $post):?>
                     <div class="post">

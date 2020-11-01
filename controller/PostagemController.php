@@ -18,7 +18,6 @@
 
         //Inserir postagens na Base de dados - Metodo Igual tambem no Model
         public function publicaPostC(){
-            $sucesso = "sucesso";
             $falha = "erro";
             //Verificar se ambos estao vazio ambos, Antes de Inserir
             if(empty($this->conteudoTexto) && $this->foto["size"]==0){
@@ -26,15 +25,18 @@
             }else{
                 if(($this->foto["size"] == 0)){
                     $this->conteudoFoto = null;
-                    $this->publicarPost();
-                    return $sucesso;
+                    $ultimoid = $this->publicarPost();
+                    $ultimopost = $this ->caregarUmPost($ultimoid);
+                    return $ultimopost;
+                    //return $sucesso;
                 }else{
                     require_once '../utils/Upload.php';
                     $upload = new Upload($this->foto,"../assets/img/feedimages/");
                     $upload ->fazerUpload();
                     $this->conteudoFoto = $upload->caminhoImagem();
-                    $this->publicarPost();
-                    return $sucesso;
+                    $ultimoid = $this->publicarPost();
+                    $ultimopost = $this ->caregarUmPost($ultimoid);
+                    return $ultimopost;
                 }
             }
     }

@@ -25,7 +25,8 @@ class Postagem extends Db{
         $stmt ->bindParam(':privacidade',$this->privacidade);
         $stmt ->bindParam(':autor',$autor);
         if($stmt->execute()){
-            //echo 'Inserido com Sucesso';
+            $ultimoid = $conexao->lastInsertId();
+            return $ultimoid;
         }else{
             //echo "A insersao falhou";
         };
@@ -34,7 +35,8 @@ class Postagem extends Db{
 //CARREGAR UNICO POST
     protected function caregarUmPost($idPostagem){
         $conexao = self::conectar();
-        $sql = "SELECT * FROM postagem WHERE idpostagem = :id";
+        $sql = "SELECT p.*, u.nomeProprio, u.apelido, u.nomeUsuario from postagem as p inner join usuario as u on p.usuario_idusuario = u.idusuario AND idpostagem = :id";
+        //$sql = "SELECT * FROM postagem WHERE idpostagem = :id";
         $stmt = $conexao->prepare($sql);
         $stmt ->bindParam(':id', $idPostagem);
         $stmt->execute();
